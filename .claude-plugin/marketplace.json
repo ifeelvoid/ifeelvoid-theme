@@ -1,0 +1,5 @@
+{
+  "name": "ifeelvoid",
+  "owner": { "name": "IFEELVOID" },
+  "plugins": [{ "name": "ifeelvoid", "source": "./" }]
+}
