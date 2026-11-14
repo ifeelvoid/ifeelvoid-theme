@@ -2,9 +2,9 @@
 
 Near-black void. Purple used like a blade, not a paint roller. Cold contrast, no pastel, no generic dark mode.
 
-<a href="media/brag.mp4"><img src="media/preview.gif" alt="IFEELVOID switching looks live with /void: void to Studio Night to Release Mode" width="100%"></a>
+<a href="https://github.com/ifeelvoid/ifeelvoid-theme/raw/main/media/brag.mp4"><img src="media/preview.gif" alt="IFEELVOID switching looks live with /void: void to Studio Night to Release Mode" width="100%"></a>
 
-**[▶ Watch the 21-second video, with sound](media/brag.mp4)**
+**[▶ Watch the 21-second video, with sound](https://github.com/ifeelvoid/ifeelvoid-theme/raw/main/media/brag.mp4)**
 
 Four dark looks for the Claude desktop and mobile apps, switching by the clock (America/New_York). The terminal keeps its own colors.
 
