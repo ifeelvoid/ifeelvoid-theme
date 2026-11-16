@@ -6,26 +6,45 @@ Near-black void. Purple used like a blade, not a paint roller. Cold contrast, no
 
 **[▶ Watch the 21-second video, with sound](https://github.com/ifeelvoid/ifeelvoid-theme/raw/main/media/brag.mp4)**
 
-Four dark looks for the Claude desktop and mobile apps, switching by the clock (America/New_York). The terminal keeps its own colors.
+Looks for the Claude desktop and mobile apps. The terminal keeps its own colors.
 
-| Look | When | What it is |
-| --- | --- | --- |
-| **Release Mode** | 8am–6pm | Pure black and white, one purple, stronger borders. Built to be read tired. |
-| **Signal Bleed** | 6pm–midnight | The void, alive: scanlines drifting down the edges, a slow roll bar, purple glitch tears in the margins. |
-| **Studio Night** | midnight–8am | Same black, lit by VU-meter amber. |
-| **IFEELVOID** | on demand | The still original: purple-tinted black and a black-to-deep-purple ground. |
+## Void Sky (default)
+
+The theme follows the real sky over New York:
+
+- **Sun** — its height is worked out on the machine every minute. Light paper while it's up, a rose-and-peach **Dawn**, a violet-to-orange **Dusk**, deep indigo **Blue Hour**, then the void for **Night**.
+- **Season** — tints the paper: winter ice, spring sage, summer sand, autumn amber. At night the void leans colder in winter, warmer in autumn.
+- **Weather** — from [Open-Meteo](https://open-meteo.com) every 15 minutes, no key. Clouds and fog flatten it, rain turns it slate, snow goes bright and cold, a storm pulls the void back in at noon. Only New York's city coordinates leave the machine.
+
+The status line names the sky it's painting, e.g. `Void Sky · Dusk · Autumn · Rain`.
+
+## The fixed looks
+
+| Look | What it is |
+| --- | --- |
+| **Event Horizon** | A pixel black hole with a purple accretion disk over a pulsing equalizer skyline. |
+| **IFEELVOID** | The still original: purple-tinted black and a black-to-deep-purple ground. |
+| **Void Day** | The void in daylight: cold lavender-grey paper, ink-black text, purple deepened to hold contrast. |
+| **Signal Bleed** | The void, alive: scanlines drifting down the edges, a slow roll bar, purple glitch tears in the margins. |
+| **Studio Night** | Same black, lit by VU-meter amber. |
+| **Release Mode** | Pure black and white, one purple, stronger borders. Built to be read tired. |
+
+`/void schedule` switches them by the clock instead (America/New_York): Void Day 8am–6pm, Signal Bleed 6pm–midnight, Studio Night midnight–8am.
 
 ## Switching by hand
 
 ```
+/void sky
+/void event-horizon
+/void void
+/void day
 /void signal-bleed
 /void studio-night
 /void release
-/void void
-/void auto
+/void schedule
 ```
 
-A pick holds until `/void auto` puts it back on the schedule. Signal Bleed stays still when the system asks for reduced motion.
+A pick holds until `/void sky` (or `/void auto`) hands it back to the sky. The animated scenes stay still when the system asks for reduced motion.
 
 ## Install
 
@@ -56,4 +75,4 @@ In the desktop app, where `/plugin` does not run: click + next to the prompt box
 | Text | `#efecf3` |
 | Ground | `#000000` → `#1A0D26` |
 
-Colors and the schedule live in `hooks/looks.ts`; the Signal Bleed scene in `hooks/scene.ts`.
+The fixed looks and the schedule live in `hooks/looks.ts`; Void Sky in `hooks/sky.ts`, `hooks/sun.ts` and `hooks/weather.ts`; the scenes in `hooks/scene.ts` and `hooks/scene-horizon.ts`.

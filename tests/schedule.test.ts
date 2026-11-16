@@ -5,8 +5,8 @@ import { lookForHour, newYorkHour } from '../hooks/looks'
 test('each hour boundary picks the right look', () => {
   expect(lookForHour(0)).toBe('studio-night')
   expect(lookForHour(7)).toBe('studio-night')
-  expect(lookForHour(8)).toBe('release')
-  expect(lookForHour(17)).toBe('release')
+  expect(lookForHour(8)).toBe('day')
+  expect(lookForHour(17)).toBe('day')
   expect(lookForHour(18)).toBe('signal-bleed')
   expect(lookForHour(23)).toBe('signal-bleed')
 })

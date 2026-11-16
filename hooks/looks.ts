@@ -2,7 +2,7 @@ import type { ThemeSetArgs } from 'claude-code'
 
 import { makeColors } from './make-colors.js'
 
-export type LookName = 'void' | 'signal-bleed' | 'studio-night' | 'release'
+export type LookName = 'event-horizon' | 'void' | 'day' | 'signal-bleed' | 'studio-night' | 'release'
 
 export interface Look {
   readonly name: LookName
@@ -73,6 +73,38 @@ const releaseColors = makeColors({
   },
 })
 
+// Void Day: the void in daylight. Cold lavender-grey paper, ink-black text, purple deepened to hold contrast.
+const dayColors = makeColors({
+  label: 'IFEELVOID Day',
+  id: 'ifeelvoid-day',
+  only: 'light',
+  roles: { accent: '#7b2cbf', pro: '#5a189a', danger: '#c62f35', success: '#1f8a5c', warning: '#a86f0c' },
+  light: {
+    gray: {
+      anchors: {
+        'surface-0': '#ebe8f0',
+        'surface-1': '#f3f1f6',
+        'surface-2': '#f8f7fa',
+        'text-primary': '#0c0910',
+        'text-secondary': '#3d3547',
+        'text-muted': '#655b72',
+      },
+    },
+  },
+})
+
+// Daylight on the void: pale at the top, the same purple haze pooling under the prompt.
+const DAY_GROUND: ThemeSetArgs['backdrop'] = {
+  gradient: {
+    angle: 180,
+    stops: [
+      { at: 0, color: '#f4f2f7' },
+      { at: 0.62, color: '#ebe8f0' },
+      { at: 1, color: '#ddd2ea' },
+    ],
+  },
+}
+
 // Black to dark purple only: the palette's one allowed gradient. The glow sits under the prompt.
 const VOID_GROUND: ThemeSetArgs['backdrop'] = {
   gradient: {
@@ -86,7 +118,14 @@ const VOID_GROUND: ThemeSetArgs['backdrop'] = {
 }
 
 export const LOOKS: Readonly<Record<LookName, Look>> = {
+  'event-horizon': {
+    name: 'event-horizon',
+    label: 'Event Horizon',
+    args: { colors: voidColors.theme, backdrop: { scene: 'event-horizon', glass: false } },
+    problems: voidColors.problems,
+  },
   void: { name: 'void', label: 'IFEELVOID', args: { colors: voidColors.theme, backdrop: VOID_GROUND }, problems: voidColors.problems },
+  day: { name: 'day', label: 'Void Day', args: { colors: dayColors.theme, backdrop: DAY_GROUND }, problems: dayColors.problems },
   'signal-bleed': {
     name: 'signal-bleed',
     label: 'Signal Bleed',
@@ -107,9 +146,11 @@ export const LOOKS: Readonly<Record<LookName, Look>> = {
   },
 }
 
-// America/New_York: Release Mode by day, Signal Bleed in the evening, Studio Night after midnight.
+export const DEFAULT_LOOK: LookName = 'event-horizon'
+
+// America/New_York: Void Day by day, Signal Bleed in the evening, Studio Night after midnight.
 export function lookForHour(hour: number): LookName {
-  if (hour >= 8 && hour < 18) return 'release'
+  if (hour >= 8 && hour < 18) return 'day'
   if (hour >= 18) return 'signal-bleed'
   return 'studio-night'
 }
