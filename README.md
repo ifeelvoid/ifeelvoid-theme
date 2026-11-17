@@ -2,9 +2,9 @@
 
 Near-black void. Purple used like a blade, not a paint roller. Cold contrast, no pastel, no generic dark mode.
 
-<a href="https://github.com/ifeelvoid/ifeelvoid-theme/raw/main/media/brag.mp4"><img src="media/preview.gif" alt="IFEELVOID switching looks live with /void: void to Studio Night to Release Mode" width="100%"></a>
+<a href="https://github.com/ifeelvoid/ifeelvoid-theme/raw/main/media/brag.mp4"><img src="media/preview.gif" alt="Event Horizon: a pixel black hole with a purple accretion disk, debris in orbit, and an equalizer skyline" width="100%"></a>
 
-**[▶ Watch the 21-second video, with sound](https://github.com/ifeelvoid/ifeelvoid-theme/raw/main/media/brag.mp4)**
+**[▶ Watch the 24-second video, with sound](https://github.com/ifeelvoid/ifeelvoid-theme/raw/main/media/brag.mp4)**
 
 Looks for the Claude desktop and mobile apps. The terminal keeps its own colors.
 
@@ -91,4 +91,4 @@ In the desktop app, where `/plugin` does not run: click + next to the prompt box
 | Text | `#efecf3` |
 | Ground | `#000000` → `#1A0D26` |
 
-The fixed looks and the schedule live in `hooks/looks.ts`; Void Sky in `hooks/sky.ts`, `hooks/sun.ts` and `hooks/weather.ts`; the scenes in `hooks/scene.ts` and `hooks/scene-horizon.ts`.
+The fixed looks and the schedule live in `hooks/looks.ts`; Void Sky in `hooks/sky.ts`, `hooks/sun.ts` and `hooks/weather.ts`; the scenes in `hooks/scene.ts` and `hooks/scene-horizon.ts`. Event Horizon is generated: edit `tools/gen-horizon.mjs`, then run `node tools/gen-horizon.mjs hooks/scene-horizon.ts`.
