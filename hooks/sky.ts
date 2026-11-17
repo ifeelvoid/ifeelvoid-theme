@@ -42,10 +42,18 @@ const DARK_ROLES = { accent: '#9d4edd', pro: '#7b2cbf', danger: '#e5484d', succe
 
 /** Light-mode paper per season: winter ice, spring sage, summer sand, autumn amber. */
 const SEASON_PAPER: Readonly<Record<Season, Hsl>> = {
-  winter: { h: 215, s: 18, l: 90 },
-  spring: { h: 150, s: 12, l: 90 },
-  summer: { h: 46, s: 22, l: 91 },
-  autumn: { h: 30, s: 24, l: 89 },
+  winter: { h: 212, s: 24, l: 91 },
+  spring: { h: 140, s: 18, l: 90 },
+  summer: { h: 44, s: 34, l: 90 },
+  autumn: { h: 28, s: 32, l: 88 },
+}
+
+/** A clear day's sky per season: top of the window, then the glow it settles into under the prompt. */
+const SEASON_SKY: Readonly<Record<Season, { top: Hsl; glow: Hsl }>> = {
+  winter: { top: { h: 205, s: 40, l: 88 }, glow: { h: 232, s: 28, l: 90 } },
+  spring: { top: { h: 188, s: 50, l: 84 }, glow: { h: 110, s: 34, l: 85 } },
+  summer: { top: { h: 202, s: 72, l: 79 }, glow: { h: 38, s: 70, l: 82 } },
+  autumn: { top: { h: 212, s: 46, l: 82 }, glow: { h: 20, s: 58, l: 82 } },
 }
 
 /** The void at night leans with the season: colder in winter, warmer in autumn. */
@@ -118,7 +126,7 @@ function lightLook(state: SkyState): Painted {
       : state.phase === 'dusk'
         ? [{ h: 265, s: 35, l: 72 }, { h: 330, s: 40, l: 78 }, { h: 28, s: 80, l: 72 }]
         : state.weather === 'clear' || state.weather === 'unknown'
-          ? [{ h: 205, s: 55, l: 84 }, paperStop, { h: 275, s: 30, l: 86 }]
+          ? [SEASON_SKY[state.season].top, paperStop, SEASON_SKY[state.season].glow]
           : [{ h: weather.hue ?? hue, s: 14, l: clamp(base - 8 + weather.dl, 60, 95) }, paperStop, { h: 275, s: 18, l: 86 }]
   const satScale = state.weather === 'clear' || state.weather === 'unknown' ? 1 : Math.max(weather.sat, 0.4)
   return { anchors, sky, satScale }

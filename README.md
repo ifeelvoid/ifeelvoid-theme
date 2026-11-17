@@ -18,6 +18,14 @@ The theme follows the real sky over New York:
 
 The status line names the sky it's painting, e.g. `Void Sky · Dusk · Autumn · Rain`.
 
+<table>
+<tr><td width="50%"><img src="media/looks/sky-dawn.png" alt="Dawn · autumn"><br><sub>Dawn · autumn</sub></td><td width="50%"><img src="media/looks/sky-day.png" alt="Day · autumn"><br><sub>Day · autumn</sub></td></tr>
+<tr><td width="50%"><img src="media/looks/sky-dusk.png" alt="Dusk · autumn"><br><sub>Dusk · autumn</sub></td><td width="50%"><img src="media/looks/sky-blue-hour.png" alt="Blue Hour"><br><sub>Blue Hour</sub></td></tr>
+<tr><td width="50%"><img src="media/looks/sky-night.png" alt="Night · winter"><br><sub>Night · winter</sub></td><td width="50%"><img src="media/looks/sky-winter-snow.png" alt="Day · winter · snow"><br><sub>Day · winter · snow</sub></td></tr>
+<tr><td width="50%"><img src="media/looks/sky-spring.png" alt="Day · spring"><br><sub>Day · spring</sub></td><td width="50%"><img src="media/looks/sky-summer.png" alt="Day · summer"><br><sub>Day · summer</sub></td></tr>
+<tr><td width="50%"><img src="media/looks/sky-rain.png" alt="Day · rain"><br><sub>Day · rain</sub></td><td width="50%"><img src="media/looks/sky-storm.png" alt="Storm at noon"><br><sub>Storm at noon</sub></td></tr>
+</table>
+
 ## The fixed looks
 
 | Look | What it is |
@@ -28,6 +36,12 @@ The status line names the sky it's painting, e.g. `Void Sky · Dusk · Autumn ·
 | **Signal Bleed** | The void, alive: scanlines drifting down the edges, a slow roll bar, purple glitch tears in the margins. |
 | **Studio Night** | Same black, lit by VU-meter amber. |
 | **Release Mode** | Pure black and white, one purple, stronger borders. Built to be read tired. |
+
+<table>
+<tr><td width="50%"><img src="media/looks/event-horizon.png" alt="Event Horizon"><br><sub>Event Horizon</sub></td><td width="50%"><img src="media/looks/void.png" alt="IFEELVOID"><br><sub>IFEELVOID</sub></td></tr>
+<tr><td width="50%"><img src="media/looks/day.png" alt="Void Day"><br><sub>Void Day</sub></td><td width="50%"><img src="media/looks/signal-bleed.png" alt="Signal Bleed"><br><sub>Signal Bleed</sub></td></tr>
+<tr><td width="50%"><img src="media/looks/studio-night.png" alt="Studio Night"><br><sub>Studio Night</sub></td><td width="50%"><img src="media/looks/release.png" alt="Release Mode"><br><sub>Release Mode</sub></td></tr>
+</table>
 
 `/void schedule` switches them by the clock instead (America/New_York): Void Day 8am–6pm, Signal Bleed 6pm–midnight, Studio Night midnight–8am.
 
@@ -45,6 +59,8 @@ The status line names the sky it's painting, e.g. `Void Sky · Dusk · Autumn ·
 ```
 
 A pick holds until `/void sky` (or `/void auto`) hands it back to the sky. The animated scenes stay still when the system asks for reduced motion.
+
+<sub>The stills are rendered from the mod's own generated colors, grounds and scenes (`tools/gallery.ts`) in a mock of the desktop window, not captured from the app.</sub>
 
 ## Install
 
